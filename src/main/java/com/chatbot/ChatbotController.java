@@ -95,7 +95,6 @@ public class ChatbotController {
 	         System.out.println(says);
 	         result.setMsg(says);
 	      } catch (Exception e) {
-	         // TODO Auto-generated catch block
 	         e.printStackTrace();
 	      }
         return ResponseEntity.ok(result); 
