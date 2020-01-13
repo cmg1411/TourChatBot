@@ -94,7 +94,6 @@ public class ChatbotController {
 	         List<Says> says = userService.findByInput(map.get(li.get(0)).getFulfillmentText());
 	         System.out.println(says);
 	         result.setMsg(says);
-	         
 	      } catch (Exception e) {
 	         e.printStackTrace();
 	      }
