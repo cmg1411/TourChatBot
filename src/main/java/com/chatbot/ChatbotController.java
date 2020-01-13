@@ -93,12 +93,10 @@ public class ChatbotController {
 	         
 	         List<Says> says = userService.findByInput(map.get(li.get(0)).getFulfillmentText());
 	         System.out.println(says);
-	         result.setMsg(userService.findByInput(map.get(li.get(0)).getFulfillmentText()));
+	         result.setMsg(says);
 	      } catch (Exception e) {
-	         // TODO Auto-generated catch block
 	         e.printStackTrace();
 	      }
- 
         return ResponseEntity.ok(result); 
     }
 	
