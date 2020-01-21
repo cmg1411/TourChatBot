@@ -14,10 +14,16 @@ public class Says {
 	
 	private String output;
 	
-	public Says(String id, String input, String output) {
+	private String imgurl;
+	
+	private String url;
+	
+	public Says(String id, String input, String output, String imgurl, String url) {
 		this.id = id;
 		this.input = input;
 		this.output = output;
+		this.imgurl = imgurl;
+		this.url = url;
 	}
 
 	public String getId() {
@@ -47,5 +53,21 @@ public class Says {
 	@Override
 	public String toString() {
 		return output;
+	}
+
+	public String getImgurl() {
+		return imgurl;
+	}
+
+	public void setImgurl(String imgurl) {
+		this.imgurl = imgurl;
+	}
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
 	}
 }
