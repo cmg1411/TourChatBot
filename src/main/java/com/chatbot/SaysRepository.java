@@ -10,6 +10,6 @@ import domain.Says;
 
 @Service
 public interface SaysRepository extends PagingAndSortingRepository<Says, String> {
-		List<Says> findByInput(String input);
+		List<Says> findALLByInput(String input);
 		
 }

@@ -91,7 +91,7 @@ public class ChatbotController {
 	      try {
 	         Map<String, QueryResult> map = detectIntentTexts("df-maven",li, "12345", "kr-KR");
 	         
-	         List<Says> says = userService.findByInput(map.get(li.get(0)).getFulfillmentText());
+	         List<Says> says = userService.findALLByInput(map.get(li.get(0)).getFulfillmentText());
 	         System.out.println(says);
 	         result.setMsg(says);
 	      } catch (Exception e) {

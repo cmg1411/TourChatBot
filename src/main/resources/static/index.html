@@ -917,10 +917,20 @@ function newMessage() {
         data:sendData,
         datatype:"json",
         success: function(data) {
-        	var mess1 = JSON.stringify(data.msg[0]["output"]);
-			
+        	var mess1 = JSON.stringify(data.msg[0]["output"]).replace(/"/g, "");
+        	var mess2 = JSON.stringify(data.msg[0]["url"]).replace(/"/g, "");
+        	var mess3 = JSON.stringify(data.msg[0]["imgurl"]).replace(/"/g, "");
+        	var str = JSON.stringify(data.msg[0]["output"]).replace(/"/g, "");
+        	
         	$('<li class="replies"><img src="http://emilcarlsson.se/assets/mikeross.png" alt="" /><p>' 
-        			+ mess1 + '</p></li>').appendTo($('.messages ul'));
+        			 + mess1 + '</p></li>').appendTo($('.messages ul'));
+        	if(mess2!="null" && mess3!="null"){
+        		$('<li class="replies"><img src="http://emilcarlsson.se/assets/mikeross.png" alt="" /><p>' 
+       				 + '<img id="img1" src="" alt="" /><p>'
+       				 + '<a href="www.naver.com">관련주소로이동</a></p></li>').appendTo($('.messages ul'));
+        		var url = mess3;
+        		img1.src=url;
+        	}
         	$('.contact.active .preview').html('<span>You: </span>' + mess);
         	$(".messages").animate({ scrollTop: $(document).height() }, "fast");
         }
