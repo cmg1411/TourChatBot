@@ -1,4 +1,4 @@
-package com.chatbot;
+package com.chatbot.repository;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Service;
 
-import domain.Says;
+import com.chatbot.model.Says;
 
 @Service
 public interface SaysRepository extends PagingAndSortingRepository<Says, String> {
